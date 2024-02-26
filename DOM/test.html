@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hello</h1>
+  </body>
+  <script>
+
+    colorArr = ["red", "green", "blue", "yellow", "black", "aqua" , "grey"]
+
+    function createDivs(divName, divColor) {
+
+      for (let i = 0; i<divColor.length; i++) {
+      const element = divColor[i];
+      console.log(element);
+       
+      const myDiv = document.createElement("div");
+      myDiv.setAttribute("class", divName);
+      //myDiv.setAttribute("tag",);
+      console.log(myDiv);
+      myDiv.style.color = divColor[i];
+
+      myDiv.innerText = divColor[i];
+
+      document.body.appendChild(myDiv);
+
+      }
+
+     
+    }
+
+    createDivs("divOne", colorArr);
+  </script>
+</html>
