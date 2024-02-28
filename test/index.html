@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="stats1_chart1"></div>
+<script>
+    var options = {
+          series: [44, 55, 41, 17, 15],
+          labels: ['Apple', 'Mango', 'Orange', 'Watermelon', 'test'],
+        chart: {
+          type: 'donut',
+          foreColor: '#ffffff'
+        },
+        grid: {
+          borderColor: "#EF3252"
+        },
+        plotOptions: {
+          pie: {
+            expandOnClick: false
+          }
+        },
+        responsive: [{
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: '100%'
+            },
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }],
+        datasets: [{
+          borderColor: ["#EF3252"]
+        }]
+        };
+
+   var chart = new ApexCharts(document.getElementById("stats1_chart1"), options);
+   chart.render();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts">
+</script>
+</body>
+</html>
