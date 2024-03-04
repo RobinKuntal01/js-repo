@@ -1,17 +1,23 @@
-const requestUrl = "https://api.github.com/users/RobinKuntal01"
+img = document.querySelector("#img");
+para = document.querySelector("#para");
 
+const requestUrl = "https://api.github.com/users/hiteshchoudhary";
 const xhr = new XMLHttpRequest();
 
-xhr.open('GET', requestUrl) 
-console.log(xhr.readyState);
-xhr.onreadystatechange = function(){
+getData = document.getElementById("getData");
+
+getData.addEventListener("click", function () {
+  xhr.open("GET", requestUrl);
+  xhr.onreadystatechange = function () {
     console.log(xhr.readyState);
-    if(this.onreadystatechange === 4){
-        const data = JSON.parse(this.responeText)
-        console.log(data.login);
+    if (xhr.readyState === 4) {
+      const data = JSON.parse(this.responseText);
+     // img.setAttribute("src", `${data.avatar_url}`);
+     img.src = `${data.avatar_url}`
+      para.innerHTML = `${data.bio}`;
+      // console.log(`${data.avatar_url}`);
     }
-}
+  };
 
-
- xhr.send()
-
+  xhr.send();
+});
